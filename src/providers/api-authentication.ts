@@ -265,13 +265,12 @@ export class ApiAuthentication {
 	// Details 
 	/////////////////////////////////////////////////////////////////////
 
-	loadDetails() {
-	  if (this.details) {
-	    return Promise.resolve(this.details);
-	  }
-
+	loadDetails( id ) {
+    console.log('load details  ' + id);
+	let url = 'http://api.yummly.com/v1/api/recipe/'+id+'?_app_id=397aed16&_app_key=69e2565adcec7a6609b18bef31261e62';
+    console.log(url)
 	  return new Promise(resolve => {
-		this.http.get('http://api.yummly.com/v1/api/recipe/French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364?_app_id=397aed16&_app_key=69e2565adcec7a6609b18bef31261e62')
+		this.http.get(url)
 	      .map(res => res.json())
 		  .subscribe(data => {
 		    console.log(data);

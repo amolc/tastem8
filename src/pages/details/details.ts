@@ -35,8 +35,9 @@ export class DetailsPage {
   public id;
   
   constructor(public navCtrl: NavController, private navParams: NavParams, public apiAuthentication: ApiAuthentication, private platform: Platform, private ngZone: NgZone) {
-    this.loadRecipes();
-    // this.id = navParams.get('id');
+    this.loadRecipes(navParams.get('id'));
+    console.log(navParams.get('id'));
+    this.id = navParams.get('id');
   }
 
   ionViewDidLoad() {
@@ -69,9 +70,9 @@ export class DetailsPage {
   // Loading Recipes 
   /////////////////////////////////////////////////////////////////////
 
-  loadRecipes(){
-    this.id = "test";
-    this.apiAuthentication.loadDetails()
+  loadRecipes( id ){
+  
+    this.apiAuthentication.loadDetails( id )
     .then(data => {
       this.api = data;
     });

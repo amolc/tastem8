@@ -30,11 +30,13 @@ export class Category1Page {
   loadRecipes(){
     this.apiAuthentication.loadCategory1()
     .then(data => {
+    console.log(data);
       this.api = data;
     });
   } 
 
   goToDetails(id) {
+  console.log(id);
     this.navCtrl.push(DetailsPage, {id: id});
   }
 }

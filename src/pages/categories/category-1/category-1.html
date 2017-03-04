@@ -15,7 +15,7 @@
 
 <ion-content>
 	<ion-list>
-		<ion-item *ngFor="let item of api" (click)="goToDetails(id)">
+		<ion-item *ngFor="let item of api" (click)="goToDetails(item.id)">
 			<div class="thumb">
 				<img src="{{item.smallImageUrls}}">
 			</div>
