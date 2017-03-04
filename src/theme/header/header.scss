@@ -1,0 +1,28 @@
+
+.header {
+	text-align: center;
+	border-bottom: 1px solid map-get($colors, primary);
+	min-height: 57px;
+	background: #fff;
+
+	.toolbar-background-md {
+		background: #fff;
+	}
+
+	.logo {
+		position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 160px;
+	}
+
+	.back-button.back-button {
+		vertical-align: middle;
+	}
+
+	&:after {
+		display: none;
+	}
+
+}

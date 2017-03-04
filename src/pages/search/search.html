@@ -1,0 +1,106 @@
+<!--
+  Generated template for the Search page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <img class="logo" src="images/logo.png" alt="">
+</ion-header>
+
+<ion-content padding>
+    <ion-item class="search">
+        <ion-input type="text" placeholder="Search Recipes" (input)="searchRecipeDB($event, searchKey)"></ion-input>
+    </ion-item>
+    <button ion-button outline class="advanced" (click)="toggleClass(1)">Advanced</button>
+    <div class="toggle-advanced" [ngClass]="{'active': highlightedDiv === 1}"> 
+      <ion-icon name="close" (click)="toggleClass(1)"></ion-icon>
+
+      <div class="diets advanced-category">
+        <h1 (click)="toggle(1)">Diets</h1>
+        <ul [ngClass]="{'active': highlightedDiv2 === 1}">
+          <li *ngFor="let diet of diets; let i = index">
+            {{diet}}
+            <input type="checkbox"
+                   [(ngModel)]="selectedDiets[i]">
+          </li>
+        </ul>
+      </div>
+
+      <div class="allergies advanced-category">
+        <h1 (click)="toggleA(1)">Allergies</h1>
+        <ul [ngClass]="{'active': highlightedDiv3 === 1}">
+          <li *ngFor="let allergy of allergies; let i = index">
+            {{allergy}}
+            <input type="checkbox"
+                   [(ngModel)]="selectedAllergies[i]">
+          </li>
+        </ul>
+      </div>
+
+      <div class="cuisines advanced-category">
+        <h1 (click)="toggleB(1)">Cuisines</h1>
+        <ul [ngClass]="{'active': highlightedDiv4 === 1}">
+          <li *ngFor="let cuisine of cuisines; let i = index">
+            {{cuisine}}
+            <input type="checkbox"
+                   [(ngModel)]="selectedCuisines[i]">
+          </li>
+        </ul>
+      </div>
+
+      <div class="courses advanced-category">
+        <h1 (click)="toggleC(1)">Courses</h1>
+        <ul [ngClass]="{'active': highlightedDiv5 === 1}">
+          <li *ngFor="let course of courses; let i = index">
+            {{course}}
+            <input type="checkbox"
+                   [(ngModel)]="selectedCourses[i]">
+          </li>
+        </ul>
+      </div>
+
+      <div class="holidays advanced-category">
+        <h1 (click)="toggleD(1)">Holidays</h1>
+        <ul [ngClass]="{'active': highlightedDiv6 === 1}">
+          <li *ngFor="let holiday of holidays; let i = index">
+            {{holiday}}
+            <input type="checkbox"
+                   [(ngModel)]="selectedHolidays[i]">
+          </li>
+        </ul>
+      </div>
+      <button class="button button-block button-positive submit" (click)="submit()">
+        Filter
+      </button>
+    </div>
+     
+    <ion-list>    
+      <ion-item *ngFor="let item of recipes" [navPush] = "detailsPage">
+        <div class="thumb">
+          <img src="{{item.smallImageUrls}}">
+        </div>
+        <div class="item-text">
+          <div class="inner">
+            <div class="title">
+              <h1>{{item.recipeName}}</h1>
+            </div>
+            <div class="rating">
+              <rating [(ngModel)]="item.rating"></rating>
+            </div>
+            <div class="time">
+              <p>{{item.totalTimeInSeconds | HoursMinutesSeconds}} minutes</p>
+            </div>
+            <div class="ingredients">
+              <p>{{item.ingredients.length}} Ingredients</p>
+            </div>
+          </div>
+        </div>        
+      </ion-item>
+    </ion-list>
+	<div class="text">
+		<h1>Search</h1>
+		<h1>Pick</h1>
+		<h1>Enjoy</h1>
+	</div>
+</ion-content>

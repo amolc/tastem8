@@ -1,0 +1,265 @@
+page-search {
+
+	.scroll-content {
+		padding: 0 !important;
+	}
+
+	.item.search {
+		border: none !important;
+		padding: 0;
+		width: 80%;
+
+		.item-inner {
+			padding: 0 !important;
+			margin: 20px 10px;
+
+			ion-input {
+				background: #d3d3d3;
+				border-radius: 3px;
+				border: none;
+				padding: 0;
+				margin: 0;
+				box-shadow: none;
+			}
+		}
+
+		&.input-has-focus {
+			box-shadow: none !important;
+
+			.item-inner {
+				border-bottom: none !important;
+				box-shadow: none !important;
+			}
+		}
+	}
+
+	.button.submit {
+		background: map-get($colors, primary);
+		line-height: 40px;
+		color: #fff;
+		height: 40px;
+	}
+
+	.advanced {
+		position: absolute;
+		top: 20px;
+		right: 0;
+		border: none;
+		height: 48px;
+	    margin: 0;
+	    padding: 0;
+	    font-size: 12px;
+	}
+
+	.toggle-advanced {
+		position: absolute;
+		right: -500px;
+		top: 0;
+		bottom: 0;
+		transition: all .3s;
+		background: #333;
+		color: #fff;
+		padding: 10px 0; 
+		z-index: 120;
+		width: 80%;
+		overflow: scroll;
+
+		&.active {
+			right: 0;
+		}
+
+		.icon {
+			padding: 0 10px 10px;
+		}
+	}
+
+	.advanced-category {
+
+		h1 {
+			font-size: 14px;
+			line-height: 40px;
+			margin: 0;
+			padding: 0 10px;
+			background: #232323;
+		}
+
+		ul {
+			height: 0;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+
+			&.active {
+				height: 100%;
+			}
+
+			li {
+				padding: 0 20px;
+				line-height: 30px;
+				background: #444;
+				text-transform: capitalize;
+				font-weight: 600;
+
+				&:nth-child(2n) {
+					background: #545454;
+				}
+
+				input[type=checkbox] {
+					-webkit-appearance: none;
+					background-color: #111;
+					border: 1px solid #999;
+					box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+					padding: 6px;
+					border-radius: 100%;
+					display: inline-block;
+					position: relative;
+					float: right;
+					margin-top: 8px;
+
+					&:checked {
+						background: map-get($colors, primary);
+					    border-color: #fff;
+					    box-shadow: 0 0 12px #333;
+					}
+				}
+
+			}
+		}
+
+		&:nth-child(2n) {
+
+			h1 {
+				background: #292929;
+			}
+		}
+	}
+
+	.list {
+		position: relative;
+		z-index: 100;
+		background: #fff;
+
+
+		.item {
+			padding: 0;
+			font-size: 0;
+			margin-bottom: 1px;
+			width: 50%;
+			display: inline-block;
+
+			.item-inner {
+				padding: 0;
+				border: none;
+				margin: 0 1px 0 0;
+			}
+
+			&:nth-child(2n) {
+
+				.item-inner {
+					margin-right: 0;
+				}
+			}
+
+			.label {
+				margin: 0;
+				white-space: initial;
+			}
+
+			.thumb {
+				width: 100%;
+				height: 140px;
+				position: relative;
+				overflow: hidden;
+
+				img {
+					width: 220px;
+					max-width: none;
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			.item-text {
+				width: 100%;
+				padding: 10px;
+				position: relative;
+
+				.title h1 {
+					font-size: 14px;
+					color: map-get($colors, primary);
+					font-weight: bold;
+					display: -webkit-box;
+				    -webkit-line-clamp: 2;
+				    -webkit-box-orient: vertical;
+				    overflow: hidden;
+				    text-overflow: ellipsis;
+				    min-height: 33px;
+				}
+
+				p {
+					color: #333;
+					font-size: 12px;
+				}
+			}
+
+			.time p {
+				line-height: 24px;
+				margin: 0;
+			}
+
+			.ingredients p {
+				font-weight: bold;
+				line-height: 27px;
+			}
+
+			ul {
+			  padding: 0px;
+
+			  &.rating li {
+			    padding: 5px 0;
+			    background: none;
+			    color: map-get($colors, primary);
+
+			    ion-icon {
+			      font-size: 20px;
+			    }
+			  }
+			}
+
+			.course {
+				text-align: center;
+				min-height: 29px;
+
+				p {
+					background: map-get($colors, primary);
+					border-radius: 4px;
+					padding: 3px 5px;
+					color: #fff;
+					font-size: 10px;
+				}
+
+				p:empty {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.text:not(.list) {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		h1 {
+			text-transform: uppercase;
+			color: map-get($colors, primary);
+			font-weight: bold;
+		}
+	}
+}

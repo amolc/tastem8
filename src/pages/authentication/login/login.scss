@@ -1,0 +1,72 @@
+page-login {
+
+	.scroll-content {
+		background: url("../images/login-background.jpg");
+		width: 100%;
+		height: 100%;	
+	}
+
+	.logo {
+		padding-top: 30%;
+	}
+
+	form .item-input.item-block {
+		background: none;
+
+		.item-inner {
+			padding: 0;
+			border-bottom: 1px solid #dedede;
+
+			ion-input input {
+				color: rgba(#fff, .5);
+				font-family: $font-family-base;
+				padding-left: 20px;
+			}
+		}
+
+		&.ng-touched .item-inner,
+		&.input-has-focus .item-inner {
+			border-bottom: 1px solid #dedede;
+		}
+	}
+
+	.form-error-list {
+		background: none;
+		box-shadow: none;
+
+		.item-inner {
+			background: none;
+		}
+
+		p {
+			color: red;
+		}
+	}
+
+	.sign-up,
+	.password {
+		position: relative;
+
+		ion-icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: rgba(#fff, .5);
+			font-size: 35px;
+		}
+	}
+
+	.login-button,
+	.create-account {
+		width: 100%;
+		box-shadow: none;
+	}
+
+	.noPass {
+		margin-top: 50px;
+		color: #fff;
+		text-transform: none;
+		font-size: 12px;
+		font-weight: bold;
+	}
+}

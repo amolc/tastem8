@@ -1,0 +1,25 @@
+// Tab menu custom styles
+
+.tabs.tabs-md {
+
+	.tabbar {
+		background: #fff;
+		border-top: 1px solid map-get($colors, primary);
+
+		&:before {
+			display: none;
+		}
+	}
+
+	.tab-button {
+		border-right: 1px solid map-get($colors, primary);
+
+		&#tab-t0-4 {
+			border-right: none;
+		}
+
+		span.tab-button-text {
+			margin-top: 0;
+		}
+	}
+}
